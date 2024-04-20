@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:likee/profileinterest.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});
@@ -96,7 +97,12 @@ class _SelectGenderState extends State<SelectGender> {
         ),
       ),
       const SizedBox(height: 100,),
-        ElevatedButton(onPressed: (){}, child:  const Text('Continue'),
+        ElevatedButton(onPressed: (){
+          Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Profileinterest()),
+                );
+        }, child:  const Text('Continue'),
         style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white, backgroundColor: Colors.pink, // Set text color
               padding: const EdgeInsets.all(16.0), // Set padding

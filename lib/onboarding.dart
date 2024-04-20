@@ -20,8 +20,8 @@ class _OnboardingState extends State<Onboarding> {
         alignment: Alignment.center,
         padding: const EdgeInsets.all(32),
         decoration: const BoxDecoration(
-          image: DecorationImage(image: NetworkImage('https://static.vecteezy.com/system/resources/previews/006/138/385/original/cute-kid-holding-like-button-cartoon-illustration-for-perfect-nursery-children-kids-greeting-free-vector.jpg'),
-          fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage('lib/assets/images/likee1.png'),
+          fit: BoxFit.fill),
         ),        
        child: Container(
               width: 400,
