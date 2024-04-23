@@ -13,7 +13,7 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Deepfake Detection'),
+        title: const Text('Likee'),
       ),
       body:
        Container(

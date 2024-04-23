@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:likee/idealmatch.dart';
 
 class Profileinterest extends StatefulWidget {
   const Profileinterest({super.key});
@@ -83,10 +84,13 @@ class ProfileinterestrofileIinterestState extends State<Profileinterest> {
                     InterestCard(text: 'Art'),
                   ],
                 ),
-                const SizedBox(height: 300.0),
+                const SizedBox(height: 150.0),
                 ElevatedButton(
                   onPressed: () {
-                    // Handle button press
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Idealmatch()),
+                );
                     print('Continue Button Pressed');
                   },
                   child: const Text('Continue'),
