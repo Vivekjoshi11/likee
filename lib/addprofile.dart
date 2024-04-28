@@ -156,10 +156,10 @@ class _profileState extends State<profile> {
 
                 // Implement your logic to save data (e.g., using a database or API)
               },
-              child: const Text('Continue'),
+              child: const  Text('Continue'),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.pink, // Set text color
+                backgroundColor: const Color.fromARGB(255, 241,95,138), // Set text color
                 padding: const EdgeInsets.all(16.0), // Set padding
                 shape: const StadiumBorder(),
                 

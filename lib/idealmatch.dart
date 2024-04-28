@@ -88,7 +88,7 @@ class _IdealmatchState extends State<Idealmatch> {
                   },
                    child: const Text('Continue'),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor:Colors.pink,
+                    foregroundColor: Colors.white, backgroundColor:const Color.fromARGB(255, 241,95,138),
                     padding: const EdgeInsets.all(16.0),
                     shape: const StadiumBorder(),
                     minimumSize: const Size(300,50),
@@ -149,7 +149,7 @@ class InterestCard extends StatelessWidget {
           Icon(
             icon,
             size: 30.0,
-            color: Colors.pink, // Set icon color (optional)
+            color: const Color.fromARGB(255, 241,95,138), // Set icon color (optional)
           ),
           const SizedBox(width: 10.0),
           Column(

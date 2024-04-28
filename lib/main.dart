@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:likee/login.dart';
 import 'package:likee/onboarding.dart';
 
 void main() {
@@ -117,6 +118,22 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+             ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+                    print('Continue Button Pressed');
+                  },
+                  child: const Text('Continue'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white, backgroundColor:const Color.fromARGB(255, 241,95,138),
+                    padding: const EdgeInsets.all(16.0),
+                    shape: const StadiumBorder(),
+                    minimumSize: const Size(300,50),
+                  ),
+                ),
           ],
         ),
       ),

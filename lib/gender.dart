@@ -68,7 +68,7 @@ class _SelectGenderState extends State<SelectGender> {
           width: 200,
           height: 200,
           decoration: BoxDecoration(
-            color: _selectedGender == 'female'? Colors.pink : Colors.white,
+            color: _selectedGender == 'female'? const Color.fromARGB(255, 241,95,138) : Colors.white,
             border: Border.all(
               color: Colors.black,
               width: 2,
@@ -104,7 +104,7 @@ class _SelectGenderState extends State<SelectGender> {
                 );
         }, child:  const Text('Continue'),
         style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white, backgroundColor: Colors.pink, // Set text color
+              foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 241,95,138), // Set text color
               padding: const EdgeInsets.all(16.0), // Set padding
               shape: const StadiumBorder(),
               minimumSize: const Size(300, 50),

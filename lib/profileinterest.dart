@@ -95,7 +95,7 @@ class ProfileinterestrofileIinterestState extends State<Profileinterest> {
                   },
                   child: const Text('Continue'),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor:Colors.pink,
+                    foregroundColor: Colors.white, backgroundColor:const Color.fromARGB(255, 241,95,138),
                     padding: const EdgeInsets.all(16.0),
                     shape: const StadiumBorder(),
                     minimumSize: const Size(300,50),
@@ -128,7 +128,7 @@ class _InterestCardState extends State<InterestCard> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          cardColor = cardColor == Colors.white ? Colors.pink : Colors.white;
+          cardColor = cardColor == Colors.white ? const Color.fromARGB(255, 241,95,138) : Colors.white;
         });
         // Handle user tap on the card (e.g., print message)
         print('Interest selected: ${widget.text}');
