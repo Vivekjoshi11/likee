@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "633065681239",
+    "project_id": "likee-897e9",
+    "storage_bucket": "likee-897e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633065681239:android:de48a17388172071c6ce12",
+        "android_client_info": {
+          "package_name": "com.example.likee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJs91jyvLhvJsbgs_x96fhZOsDur9ssUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
