@@ -1,3 +1,4 @@
+import 'package:dob_input_field/dob_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:likee/gender.dart';
 
@@ -103,22 +104,40 @@ class _profileState extends State<profile> {
                   () => mobileNumber = value), // Update mobile number on change
             ),
             const SizedBox(height: 10,),
-            TextField(
-             decoration:  InputDecoration(
-                labelText: 'Date of Birth',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: const BorderSide(
-                    color: Colors.blue,
-                    width: 2.0,
-                  ),
-                ),
-              ),
-              keyboardType: TextInputType
-                  .datetime, // Set keyboard type for date (may require additional package)
-              onChanged: (value) => setState(
-                  () => dateOfBirth = value), // Update date of birth on change
-            ),
+            // TextField(
+            //  decoration:  InputDecoration(
+            //     labelText: 'Date of Birth',
+            //     border: OutlineInputBorder(
+            //       borderRadius: BorderRadius.circular(10.0),
+            //       borderSide: const BorderSide(
+            //         color: Colors.blue,
+            //         width: 2.0,
+            //       ),
+            //     ),
+            //   ),
+            //   // keyboardType: TextInputType
+            //   //     .datetime, // Set keyboard type for date (may require additional package)
+              
+            //   onChanged: (value) => setState(
+            //       () => dateOfBirth = value), // Update date of birth on change
+            // ),
+             DOBInputField(
+              inputDecoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),
+              borderSide: const BorderSide(
+                color: Colors.blue,
+                width: 2.0,
+              )
+               ),
+               ),
+            firstDate: DateTime(1900),
+            lastDate: DateTime.now(),
+            showLabel: true,
+            dateFormatType: DateFormatType.YYYYMMDD,
+            autovalidateMode: AutovalidateMode.always,
+            fieldLabelText: "YYYY/MM/DD",
+            
+          ),
+          
             const SizedBox(height: 10,),
             TextField(
               decoration:  InputDecoration(

@@ -16,7 +16,7 @@ class _OnboardingState extends State<Onboarding> {
           title: const Text('Likee'),
         ),
         body: Container(
-          alignment: Alignment.center,
+          alignment: Alignment.bottomCenter,
           padding: const EdgeInsets.all(32),
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -25,17 +25,30 @@ class _OnboardingState extends State<Onboarding> {
           ),
           child: Container(
             width: 400,
-            height: 400,
-            padding: const EdgeInsets.only(top: 100),
+            height: 350,
+
+            padding: const EdgeInsets.only(top: 100, bottom: 30),
             // color: const Color.fromARGB(255, 220, 67, 179),
             decoration: BoxDecoration(
               color: Colors.white, // Container color
               borderRadius: BorderRadius.circular(20), // Set border radius
             ),
             child: Column(
+              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('hi first page'),
+                // Padding(padding: ),
+                const Text('Find Your Partener With us ',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 25,
+                fontWeight: FontWeight.bold),),
+                const SizedBox(height: 1,),
+                const Text(' With us ',
+                style: TextStyle(fontSize: 25,
+                fontWeight: FontWeight.bold),),
+                const Text('Amet minimum molit non deserunt sit alique dolor do amet sint',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey),),
                 const SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
@@ -62,26 +75,3 @@ class _OnboardingState extends State<Onboarding> {
   }
 }
 
-//
-// Container(
-//               width: 200,
-//               height: 200,
-//               // color: const Color.fromARGB(255, 220, 67, 179),
-//               decoration: BoxDecoration(
-//               color: const Color.fromARGB(255, 220, 67, 179), // Container color
-//               borderRadius: BorderRadius.circular(20), // Set border radius
-//             ),
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   const Text('hi first page'),
-//                   const SizedBox(height: 20),
-//                   ElevatedButton(
-//                     onPressed: () {
-//                       // Add your button functionality here
-//                     },
-//                     child: const Text('Next'),
-//                   ),
-//                 ],
-//               ),
-//             ),
