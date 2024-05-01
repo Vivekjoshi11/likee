@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:likee/otp.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -29,14 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 100,
               ),
               const SizedBox(height: 25,),
-              // const Text(
-              //   'Likee',
-              //   style: TextStyle(
-              //     fontSize: 40.0,
-              //     fontWeight: FontWeight.bold,
-              //     color: Colors.pink,
-              //   ),
-              // ),
+             
               const Text(
                 'Signup To Continue',
                 style: TextStyle(
@@ -47,27 +41,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const Text('Please Login to Continue'),
               const SizedBox(height: 20.0),
-
-              // Text fields for email/username and password
-              // TextField(
-              //   decoration: InputDecoration(
-              //     hintText: 'Email or Username',
-              //     border: OutlineInputBorder(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(height: 10.0),
-              // TextField(
-              //   obscureText: true, // Hide password input
-              //   decoration: InputDecoration(
-              //     hintText: 'Password',
-              //     border: OutlineInputBorder(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //     ),
-              //   ),
-              // ),
-
               const SizedBox(height: 20.0),
 
               // Login button
@@ -91,6 +64,9 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                   // Handle login logic (navigation, error handling, etc.)
+                   Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Otp()),);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50.0),
@@ -120,18 +96,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  // TextButton(
-                  //   onPressed: () {
-                  //     // Handle forgot password logic (navigation, etc.)
-                  //   },
-                  //   child: const Text('Forgot Password?'),
-                  // ),
-                  // TextButton(
-                  //   onPressed: () {
-                  //     // Handle signup navigation
-                  //   },
-                  //   child: const Text('Signup'),
-                  // ),
+                 
                   ElevatedButton(
                     onPressed: () {
                       // Handle login logic (navigation, error handling, etc.)

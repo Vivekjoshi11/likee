@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  // int _selectedIndex = 0;  
   final _currentIndex = ValueNotifier<int>(0);
   @override
   Widget build(BuildContext context) {
@@ -79,31 +80,6 @@ class HomeState extends State<Home> {
                 ),
 
                 const SizedBox(height: 20.0),
-                // Profile section with Text and Subtext
-                //  const Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-
-                //      Image(image: AssetImage('lib/assets/images/vivekimage.jpg'),),
-                //      Text(
-                //       'Alexa, 22',
-                //       style: TextStyle(fontSize: 18.0),
-                //     ),
-                //      Row(
-                //       children: [
-                //         Text(
-                //           'UI/UX Designer',
-                //           style: TextStyle(fontSize: 14.0, color: Colors.grey),
-                //         ),
-                //         Icon(
-                //           Icons.arrow_drop_down,
-                //           color: Colors.grey,
-                //           size: 20.0,
-                //         ),
-                //       ],
-                //     ),
-                //   ],
-                // ),
                 Container(
                   // width: 200,
                   height: 500,
@@ -116,19 +92,6 @@ class HomeState extends State<Home> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  // child: const Column(
-                  //   mainAxisAlignment: MainAxisAlignment.end,
-                  //   children: [
-                  //     Text(
-                  //       'name',
-                  //       style: TextStyle(color: Colors.white),
-                  //     ),
-                  //     // Icon(
-                  //     //   Icons.person,
-                  //     //   color: Colors.white,
-                  //     // ),
-                  //   ],
-                  // ),
                   child: const Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     mainAxisSize: MainAxisSize.min,
@@ -160,10 +123,6 @@ class HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                // const Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-
-                // )
                 Row(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -222,7 +181,8 @@ class HomeState extends State<Home> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex.value,
+          // currentIndex: _currentIndex.value,
+          
           items: const [
             BottomNavigationBarItem(
                 icon: FaIcon(FontAwesomeIcons.home, color: Colors.black),
@@ -232,7 +192,8 @@ class HomeState extends State<Home> {
                 label: 'star'),
             BottomNavigationBarItem(
                 icon: Icon(FontAwesomeIcons.heart, color: Colors.black),
-                label: 'like'),
+                label: 'like',
+                ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.message, color: Colors.black),
                 label: 'message'),

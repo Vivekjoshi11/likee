@@ -150,7 +150,7 @@ class _OtpAuthState extends State<OtpAuth> {
             ),
             const SizedBox(height: 50.0),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 50.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 80.0),
               child: TextFormField(
                 controller: _otpController,
                 keyboardType: TextInputType.phone,
@@ -164,6 +164,7 @@ class _OtpAuthState extends State<OtpAuth> {
             ),
             const SizedBox(height: 16.0),
             InkWell(
+              
               onTap: () => _submitOTP(context), // No need for async here (handled in the function)
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 25.0),
@@ -174,6 +175,7 @@ class _OtpAuthState extends State<OtpAuth> {
                 child: const Text(
                   "Verify",
                   style: TextStyle(
+                    
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0,
