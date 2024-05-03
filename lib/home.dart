@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:likee/drawer.dart';
 import 'package:likee/like.dart';
 // import 'package:likee/addprofile.dart';
 import 'package:likee/login.dart';
 import 'package:likee/message.dart';
 import 'package:likee/profile.dart';
+import 'package:likee/star.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -29,9 +32,10 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Scaffold( // Use Scaffold with bottomNavigationBar property
+      home: 
+      Scaffold( // Use Scaffold with bottomNavigationBar property
         backgroundColor: const Color.fromARGB(255, 253, 245, 247),
-        body: Center(
+        body: SingleChildScrollView(
           child:  Container(
             // width: 350.0, // Adjust width as needed
             padding: const EdgeInsets.all(20.0),
@@ -75,7 +79,9 @@ class HomeState extends State<Home> {
                     Icon(
                       Icons.notifications,
                       color: Color.fromARGB(255, 241, 95, 138),
+                      
                     ),
+                    
                   ],
                 ),
                 const SizedBox(height: 10.0),
@@ -194,18 +200,19 @@ class HomeState extends State<Home> {
             ),
           ),
         ),
+        drawer: const MyDrawer(),
         bottomNavigationBar: BottomNavigationBar( // Add bottomNavigationBar here
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.home, color: Colors.black),
-              label: 'Matches',
+              icon: FaIcon(FontAwesomeIcons.home, color: Colors.pink),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.star, color: Colors.black),
+              icon: FaIcon(CupertinoIcons.map_pin_ellipse, color: Colors.black),
               label: 'Star',
             ),
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.heart, color: Colors.grey),
+              icon: FaIcon(FontAwesomeIcons.heart, color: Colors.black),
               label: 'Like',
             ),
             BottomNavigationBarItem(
@@ -213,7 +220,7 @@ class HomeState extends State<Home> {
               label: 'Message',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.grey),
+              icon: Icon(Icons.person, color: Colors.black),
               label: 'Person',
             ),
           ],
@@ -238,21 +245,21 @@ class HomeState extends State<Home> {
 
 
 // Replace these with your actual screens (classes)
-class StarScreen extends StatelessWidget {
-  const StarScreen({super.key});
+// class StarScreen extends StatelessWidget {
+//   const StarScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Star'),
-      ),
-      body: const Center(
-        child: Text('This is the Star Screen'),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Star'),
+//       ),
+//       body: const Center(
+//         child: Text('This is the Star Screen'),
+//       ),
+//     );
+//   }
+// }
 
 
 // class HomeState extends State<Home> {

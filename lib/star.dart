@@ -4,17 +4,16 @@ import 'package:likee/like.dart';
 import 'package:likee/message.dart';
 import 'package:likee/profile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:likee/star.dart';
+import 'package:flutter/cupertino.dart';
 
-class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
+class StarScreen extends StatefulWidget {
+  const StarScreen({super.key});
 
   @override
-  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+  State<StarScreen> createState() => _StarScreenState();
 }
 
-class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  
+class _StarScreenState extends State<StarScreen> {
    final _currentIndex = ValueNotifier<int>(0);
   final List<Widget> _screens = [
    const  Home(), // Replace with your actual home screen
@@ -26,6 +25,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      body: const Center(
+        child: Text('Map screen'),
+      ),
        bottomNavigationBar: BottomNavigationBar( // Add bottomNavigationBar here
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -33,11 +35,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.star, color: Colors.black),
-              label: 'Star',
+              icon: FaIcon(CupertinoIcons.map_pin_ellipse, color: Colors.pink),
+              label: 'Map',
             ),
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.heart, color: Colors.black),
+              icon: FaIcon(FontAwesomeIcons.heart, color: Colors.pink),
               label: 'Like',
             ),
             BottomNavigationBarItem(
@@ -45,7 +47,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               label: 'Message',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.pink),
+              icon: Icon(Icons.person, color: Colors.black),
               label: 'Person',
             ),
           ],

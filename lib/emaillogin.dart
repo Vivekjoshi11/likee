@@ -1,24 +1,42 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:likee/emaillogin.dart';
-import 'package:likee/home.dart';
-import 'package:likee/otp.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:likee/home.dart';
+import 'package:likee/onboarding.dart';
 
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class Emaillogin extends StatefulWidget {
+  const Emaillogin({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Emaillogin> createState() => _EmailloginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _EmailloginState extends State<Emaillogin> {
+   final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+    void _handleLogin() {
+    // Replace with your authentication logic (e.g., API call)
+    if (_usernameController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
+      // Simulate successful login
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Onboarding()),
+      ); // Replace with your home screen route
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter username and password'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: const Color.fromARGB(255, 253, 245, 247),
       body: Center(
         child: SingleChildScrollView(
@@ -49,15 +67,25 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20.0),
               const SizedBox(height: 20.0),
 
-              // Login button
-              ElevatedButton(
-                onPressed: () {
-                  // Handle login logic (navigation, error handling, etc.)
-                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Emaillogin()),);
-                },
-                style: ElevatedButton.styleFrom(
+
+               TextField(
+              controller: _usernameController,
+              decoration: const InputDecoration(
+                labelText: 'Username',
+              ),
+            ),
+            const SizedBox(height: 10.0),
+            TextField(
+              controller: _passwordController,
+              obscureText: true, // Hide password characters
+              decoration: const InputDecoration(
+                labelText: 'Password',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: _handleLogin,
+               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50.0),
                   foregroundColor: Colors.white,
                   backgroundColor: const Color.fromARGB(255, 241, 95, 138),
@@ -65,28 +93,43 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: const Text('Continue With email'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle login logic (navigation, error handling, etc.)
-                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Otp()),);
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50.0),
-                  backgroundColor: Colors.white,
-                  foregroundColor: const Color.fromARGB(255, 241, 95, 138),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                child: const Text('Continue With Phone Number'),
-              ),
+              child: const Text('Login'),
+            ),
+              // // Login button
+              // ElevatedButton(
+              //   onPressed: () {
+              //     // Handle login logic (navigation, error handling, etc.)
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     minimumSize: const Size(double.infinity, 50.0),
+              //     foregroundColor: Colors.white,
+              //     backgroundColor: const Color.fromARGB(255, 241, 95, 138),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(10.0),
+              //     ),
+              //   ),
+              //   child: const Text('Continue With email'),
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     // Handle login logic (navigation, error handling, etc.)
+              //      Navigator.push(
+              //     context,
+              //     MaterialPageRoute(builder: (context) => const Otp()),);
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     minimumSize: const Size(double.infinity, 50.0),
+              //     backgroundColor: Colors.white,
+              //     foregroundColor: const Color.fromARGB(255, 241, 95, 138),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(10.0),
+              //     ),
+              //   ),
+              //   child: const Text('Continue With Phone Number'),
+              // ),
 
               const SizedBox(height: 20.0),
 
@@ -172,7 +215,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  signInWithGoogle()async{
+   signInWithGoogle()async{
     
      GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
