@@ -74,8 +74,11 @@ class _OtpState extends State<Otp> {
                     fontSize: 18,
                   ),),
                 ),
-              )
+              ),
+              const SizedBox(height: 50,),
+              const Text('Note: Enter Phone number with country Code')
           ],
+          
         ),),
     );
   }

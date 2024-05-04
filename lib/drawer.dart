@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:likee/help.dart';
 import 'package:likee/home.dart';
 import 'package:likee/like.dart';
 import 'package:likee/privacypolicy.dart';
@@ -118,7 +119,7 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Setting()),
+                  MaterialPageRoute(builder: (context) => const Help()),
                 );
               },
             ),
